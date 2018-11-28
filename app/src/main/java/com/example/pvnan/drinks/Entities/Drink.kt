@@ -1,7 +1,7 @@
 package com.example.pvnan.drinks.Entities
 
 data class Drink (
-    val drink: String,
+    val strDrink: String,
     val category: String,
     val alcoholic: String,
     val instructions: String,

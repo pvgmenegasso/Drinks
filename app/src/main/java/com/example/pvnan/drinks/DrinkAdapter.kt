@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.pvnan.drinks.Entities.Drink
+import com.example.pvnan.drinks.utils.GlideApp
 import kotlinx.android.synthetic.main.drink_item.view.*
 
 class DrinkAdapter(val context: Context, val articles: List<Drink>)
@@ -33,7 +34,7 @@ class DrinkAdapter(val context: Context, val articles: List<Drink>)
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bindView(context: Context, drink: Drink, itemClickListener: ((index: Int) -> Unit)?) {
-            itemView.DrinkTitle.text = drink.drink
+            itemView.DrinkTitle.text = drink.strDrink
 
 
             GlideApp.with(context)
