@@ -17,8 +17,38 @@
     <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="50dp"
             android:id="@+id/rvmain">
     </android.support.v7.widget.RecyclerView>
+
+    <android.support.v7.widget.AppCompatButton
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="alcoolicos"
+            android:id="@+id/alcool"
+    />
+
+    <android.support.v7.widget.AppCompatButton
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="120dp"
+            android:text="nao alcoolicos"
+            android:id="@+id/nalcool"
+    />
+
+    <android.support.v7.widget.AppCompatButton
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="280dp"
+            android:text="aleatorio"
+            android:id="@+id/randomb"
+    />
 
 
 

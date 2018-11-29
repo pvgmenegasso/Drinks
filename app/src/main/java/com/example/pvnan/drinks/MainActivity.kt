@@ -11,33 +11,16 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), MainContract.view  {
 
-    //val listadrinks = listOf<Drink>()
-
-    val drink1 = Drink(
-        "aaa",
-        "aaa",
-        "aaa",
-        "aaa",
-        "aaa",
-        "aaa",
-        "aaa",
-        "aaa",
-        "aaa",
-        "aaa",
-        "aaa",
-        "aaa",
-        "aaa",
-        "aaa",
-        "aaa",
-        "aaa",
-        "aaa",
-        "aaa",
-        "aaa"
-
-    )
+    //val listadrinks = listOf<Drinks>()
 
 
-    var listadrinks = mutableListOf<Drink>()
+    var drinkslist: MutableList<Drink> = mutableListOf()
+
+    var random = 0
+
+
+
+
 
 
 
@@ -48,43 +31,75 @@ class MainActivity : AppCompatActivity(), MainContract.view  {
 
         val presenter: MainContract.presenter = MainPresenter(this)
 
-
-        for (i in 0..50)
+        if (random == 0) {
+            presenter.onLoadDrink()
+        }
+        else
         {
+            if (random == 1)
+            {
+                presenter.onLoadDrinkb()
+            }
+            else
+            {
+                presenter.onLoadDrinkc()
+            }
+        }
+
+        alcool.setOnClickListener()
+        {
+            random = 0
             presenter.onLoadDrink()
         }
 
-        exibeLista(listadrinks)
-
-
-
-
-
-
-    }
-
-
-
-    fun exibeLista(list: List<Drink>) {
-
-        val adapter = DrinkAdapter(this, list)
-        adapter.setOnItemClickListener { position ->
-            val openBrowser = Intent(Intent.ACTION_VIEW)
-            openBrowser.data = Uri.parse("https://www.google.com.br/search?q=${list.get(position).strDrink}")
-            startActivity(openBrowser)
+        nalcool.setOnClickListener()
+        {
+            random = 1
+            presenter.onLoadDrinkb()
         }
 
-        rvmain.adapter = adapter
-        rvmain.layoutManager = LinearLayoutManager(this)
+        randomb.setOnClickListener()
+        {
+            random = 2
+            presenter.onLoadDrinkc()
+        }
+
+
+
+
+
+
+
     }
+
+
+
+
 
     override fun showMessage(s: String) {
         Toast.makeText(this, s, Toast.LENGTH_LONG).show()
 
     }
 
-    override fun ListaDrinks(body: Drink?) {
-        listadrinks.plus(body)
+    override fun mostradrinks(list: List<Drink>)
+    {
+        val adapter = DrinkAdapter(this, list)
+        adapter.setOnItemClickListener { position ->
+            val openBrowser = Intent(Intent.ACTION_VIEW)
+            val query = list.get(position).strDrink
+            openBrowser.data = Uri.parse("https://www.google.com.br/search?q=$query")
+            startActivity(openBrowser)
 
+
+
+        }
+        rvmain.adapter = adapter
+        rvmain.layoutManager = LinearLayoutManager(this)
     }
+
+    override fun addDrink(drink: Drink) {
+       drinkslist.add(drink)
+    }
+
+
 }

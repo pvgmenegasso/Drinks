@@ -8,7 +8,7 @@ import com.example.pvnan.drinks.Entities.Drink
 import com.example.pvnan.drinks.utils.GlideApp
 import kotlinx.android.synthetic.main.drink_item.view.*
 
-class DrinkAdapter(val context: Context, val articles: List<Drink>)
+class DrinkAdapter(val context: Context, val drinks: List<Drink>)
     : RecyclerView.Adapter<DrinkAdapter.ViewHolder>() {
 
     var itemClickListener: ((index: Int) -> Unit)? = null
@@ -24,11 +24,11 @@ class DrinkAdapter(val context: Context, val articles: List<Drink>)
     }
 
     override fun getItemCount(): Int {
-        return articles.size
+        return drinks.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindView(context, articles[position], itemClickListener)
+        holder.bindView(context, drinks[position], itemClickListener)
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -38,7 +38,7 @@ class DrinkAdapter(val context: Context, val articles: List<Drink>)
 
 
             GlideApp.with(context)
-                .load(drink.thumb)
+                .load(drink.strDrinkThumb)
                .centerCrop()
                .into(itemView.imgDrink)
 
