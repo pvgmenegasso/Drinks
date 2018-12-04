@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.pvnan.drinks.DrinkDetails">
+
+    <android.widget.ImageView
+        android:id="@+id/imgDrink"
+        android:layout_height="140dp"
+        android:layout_width="200dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="26dp"
+        ></android.widget.ImageView>
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="nomedodrink"
+              android:id="@+id/nomeDrink"
+                android:layout_marginTop="20dp"
+              android:layout_below="@+id/imgDrink"
+              android:textSize="30sp"
+              android:layout_marginLeft="16dp"
+    />
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:id="@+id/ing1"
+              android:text="ingrediente 1"
+              android:layout_below="@+id/nomeDrink"
+              android:layout_marginTop="25dp"
+              android:layout_alignLeft="@+id/nomeDrink"
+    />
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+    android:id="@+id/qtd1"
+              android:text="quantidade"
+              android:layout_toRightOf="@+id/ing1"
+              android:layout_alignBottom="@+id/ing1"
+              android:layout_marginLeft="40dp"
+    />
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:id="@+id/ing2"
+              android:text="ingrediente 2"
+              android:layout_below="@+id/ing1"
+              android:layout_marginTop="25dp"
+              android:layout_alignLeft="@+id/ing1"
+    />
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:id="@+id/qtd2"
+              android:text="quantidade"
+              android:layout_toRightOf="@+id/ing2"
+              android:layout_alignBottom="@+id/ing2"
+              android:layout_marginLeft="40dp"
+    />
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:id="@+id/ing3"
+              android:text="ingrediente 3"
+              android:layout_below="@+id/ing2"
+              android:layout_marginTop="25dp"
+              android:layout_alignLeft="@+id/ing2"
+    />
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:id="@+id/qtd3"
+              android:text="quantidade"
+              android:layout_toRightOf="@+id/ing3"
+              android:layout_alignBottom="@+id/ing3"
+              android:layout_marginLeft="40dp"
+    />
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:id="@+id/ing4"
+              android:text="ingrediente 4"
+              android:layout_below="@+id/ing3"
+              android:layout_marginTop="25dp"
+              android:layout_alignLeft="@+id/ing3"
+    />
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:id="@+id/qtd4"
+              android:text="quantidade"
+              android:layout_toRightOf="@+id/ing4"
+              android:layout_alignBottom="@+id/ing4"
+              android:layout_marginLeft="40dp"
+    />
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:id="@+id/instructions"
+              android:text="asojidoiajosjaojdsijdoiajsiojaoijdsoijadoisjdioajdoiajdiojsdoad"
+              android:layout_below="@+id/ing4"
+              android:layout_marginTop="25dp"
+              android:layout_alignLeft="@+id/ing4"
+              android:layout_marginRight="16dp"
+    />
+
+</RelativeLayout>

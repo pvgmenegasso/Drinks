@@ -10,14 +10,18 @@ interface MainContract {
         fun showMessage(s: String)
         fun addDrink(drink: Drink)
         fun mostradrinks(list: List<Drink>)
+        fun mostradrink(list: List<Drink>)
+
 
     }
+
 
     interface presenter
     {
         fun onLoadDrink()
         fun onLoadDrinkb()
         fun onLoadDrinkc()
+        fun onLoadDrinkd(drinkId : String)
 
     }
 }

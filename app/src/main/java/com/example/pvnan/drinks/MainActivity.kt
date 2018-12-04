@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity(), MainContract.view  {
 
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -85,10 +86,11 @@ class MainActivity : AppCompatActivity(), MainContract.view  {
     {
         val adapter = DrinkAdapter(this, list)
         adapter.setOnItemClickListener { position ->
-            val openBrowser = Intent(Intent.ACTION_VIEW)
-            val query = list.get(position).strDrink
-            openBrowser.data = Uri.parse("https://www.google.com.br/search?q=$query")
-            startActivity(openBrowser)
+            val query = list.get(position).idDrink
+
+            val DetalheDrinks = Intent(this, DrinkDetails::class.java)
+            DetalheDrinks.putExtra("x", query)
+            startActivity(DetalheDrinks)
 
 
 
@@ -99,6 +101,10 @@ class MainActivity : AppCompatActivity(), MainContract.view  {
 
     override fun addDrink(drink: Drink) {
        drinkslist.add(drink)
+    }
+
+    override fun mostradrink(list: List<Drink>) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
 

@@ -88,5 +88,30 @@ class MainPresenter(val view : MainContract.view) : MainContract.presenter {
 
     }
 
+    override fun onLoadDrinkd(drinkId : String) {
+
+        val drinkService = RetrofitInicializer().createDrinkService()
+
+        val call = drinkService.getDrinkById(drinkId)
+
+        call.enqueue(object : Callback<Drinks> {
+            override fun onFailure(call: Call<Drinks>, t: Throwable) {
+                view.showMessage("Falha na conexão")
+            }
+
+            override fun onResponse(call: Call<Drinks>, response: Response<Drinks>) {
+                if(response.body() != null){
+
+                    view.mostradrink(response.body()!!.drinks)
+                }
+                else
+                    view.showMessage("sem drinkslist")
+
+            }
+        })
+
+
+    }
+
 
 }

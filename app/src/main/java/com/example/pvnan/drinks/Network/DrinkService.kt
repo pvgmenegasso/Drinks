@@ -4,6 +4,7 @@ package com.example.pvnan.drinks.Network
 import com.example.pvnan.drinks.Entities.Drinks
 import retrofit2.http.GET
 import retrofit2.Call
+import retrofit2.http.Query
 
 interface DrinkService {
 
@@ -15,4 +16,7 @@ interface DrinkService {
 
         @GET("random.php")
         fun getranddrink(): Call<Drinks>
+
+        @GET("lookup.php?")
+        fun getDrinkById(@Query("i") DrinkId : String) : Call<Drinks>
 }
